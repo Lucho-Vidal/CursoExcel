@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Curso Excel - Luciano Vidal</title>
+    <link rel="icon" href="static/logo.ico">
+</head>
+
+<body>
+
+    <nav class="fixed-top navbar navbar-expand-xxl navbar-dark bg-success rounded-bottom " id="navbar">
+        <div class=" text-light container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="static/logo.png" width="50">
+            </a>
+            <div class="h4 ml-auto ">Curso de Excel - Buscador de Trenes</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="#introdution">Introducción</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#funtion">¿que es una Función?</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#funciones">Funciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#footer">Seguime</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-xxl mt-5 ">
+        <div class="navbar-nav">
+            <h1 id="introdution" class="mt-5">Bienvenidos:</h1>
+            <p>En este curso vamos a ver lo necesario para el mantenimiento de las herramientas de trabajo ya existentes (Buscador de trenes, planilla de personal con jornadas y primer servicio, etc.) y además van a poder crear propias para facilitar el
+                trabajo de todos.</p>
+            <p>Estos conocimientos no son solamente para la oficina, sino también les va ayudar para su futuro ya sea acá o en otro sector. En lo personal me ayudo a iniciarme en el mundo de la programación.</p>
+            <p>Como programador apoyo la filosofía del código abierto, que plantea dejar a disposición a todo aquel que tiene conocimiento en el área, el código fuente de manera gratuita para mejorar la aplicación, reutilización del mismo o adaptación para
+                contextos diferentes.</p>
+            <p>Por ello, tengo la esperanza de que podamos trabajar en conjunto para mejorar nuestro ambiente de trabajo. </p>
+
+
+        </div>
+        <div>
+            <h3 id="funtion" class="my-3">¿Que es una Función?</h1>
+                <p>Una función en Excel es una fórmula que viene predefinida en la herramienta la cual facilita el proceso de formulación y simplifica el desarrollo de cálculos complejos.</p>
+                <p>Ahora, después de entender qué es una función en Excel, debes aprender cómo aplicar una función en Excel, para lo cual es necesario que sepas cuál es la sintaxis o estructura de una función en Excel.</p>
+                <p>Al respecto, las partes de una función en Excel, entendiendo que una función siempre se compone de los siguiente elementos:</p>
+                <ol>
+                    <li>Signo igual (=) para indicarle a Excel que vamos a escribir una fórmula.</li>
+                    <li>El nombre de la fórmula: para indicarle a Excel que realice el cálculo y devuelva el resultado de la fórmula que a continuación escribiremos.</li>
+                    <li>Un paréntesis de apertura: dentro del cual vamos a empezar a introducir los argumentos de la función, y a lo último, un paréntesis de cierre.</li>
+                    <li>Argumentos: pueden ser una constante (palabra, número, fecha), una referencia (celda o rango) o una función (que serían funciones anidadas). </li>
+                    <li>Los Argumentos deben ir separados por comas (,) o puntos y comas (;), dependiendo de la configuración.</li>
+
+                </ol>
+                <div class="">
+                    <img src="static/parte_funcion.jpg" class="d-block w-50 rounded-3">
+                </div>
+        </div>
+        <div id="funciones" class="mb-5">
+            <h3 id="funtion" class="my-3">¿Cuales son las funciones que usamos?</h1>
+
+                <ul type="square">
+                    <li>
+                        <p><b>SI:</b> funcion condicional de 3 argumentos. El primero es la prueba lógica, esto quiere decir que se evalua si la condición de este parametro es verdadera o falsa. En los ejemplos de abajo este argumento evalua si la celda
+                            'E2' es mayor a la 'F2'. El segundo argumento es valor que va a retornar si la prueba lógica da resultado verdadero. El Tercer argumento (opcional) es valor que va a retornar si la prueba lógica da resultado falso.</p>
+                    </li>
+                    <div class="">
+                        <img src="static/si_mayor.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                        <img src="static/si_menor.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                    </div>
+                    <li>
+                        <p><b>SI.ERROR:</b> Función condicional de 2 argumento, como la función anterior el primer parametro es la prueba lógica, pero en este caso se evalua otra función que ponemos dentro, que no de error (#N/D). En dicho caso devolverá
+                            lo que haya dentro del segundo argumento. En el ejemplo de abajo se puede obsevar que la primera formula no tiene esta función y devuelven error como resultado, pero la segunda si la poseé por tal motivo al no encontar el dato
+                            buscado devuuelve como resultado lo que hay dentro del segundo argumento. Es bueno aclarar que en Excel como en muchos lenguajes de programación, los textos o los String (del ingles: cadena de caracteres) van siempre entre
+                            comillas. Por tal motivo si queremos que,esta función, nos devuelva una celda en blanco debemos pasar como parametro un string vacio de la siguiente forma ("") </p>
+                    </li>
+                    <div class="">
+                        <img src="static/si_error.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                    </div>
+                    <li>
+                        <p><b>BUSCARV:</b> La función que más usaremos. Contiene 4 argumento obligatorios. </p>
+                    </li>
+                    <li>Argumentos: pueden ser una constante (palabra, número, fecha), una referencia (celda o rango) o una función (que serían funciones anidadas). </li>
+                    <li>Los Argumentos deben ir separados por comas (,) o puntos y comas (;), dependiendo de la configuración.</li>
+
+                </ul>
+
+        </div>
+
+
+    </div>
+    <footer id="footer" class="bg-dark rounded-top" style="color:#fff">
+        <div class="d-flex justify-content-center w-100">
+            <div class="d-flex flex-row mt-5">
+                <p>Puedes seguirme en mis redes sociales.</p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center w-100 mt-2 flex-row">
+            <div class="d-flex flex-row p-4">
+                <a target='_black' href="https://twitter.com/Vidal277"><img class="bg-white p-1 rounded-3 mb-2 me-3" width="35" src="static/twitter.png" /> </a>
+                <a target='_black' href="https://github.com/Lucho-Vidal"><img class="bg-white p-1 rounded-3 mb-1 me-3" width="35" src="static/github.png" /> </a>
+                <a target='_black' href="https://www.linkedin.com/in/luciano-vidal-6b50b295/"><img class="bg-white p-1 rounded-3 mb-1 me-3" width="35" src="static/linkedin.png" /> </a>
+            </div>
+        </div>
+        <div class="py-1" style="color:#555" ;>
+            <div class="d-flex flex-row">
+                <p>Hecho con ❤ por Luciano Vidal</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
