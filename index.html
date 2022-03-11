@@ -15,9 +15,9 @@
     <nav class="fixed-top navbar navbar-expand-xxl navbar-dark bg-success rounded-bottom " id="navbar">
         <div class=" text-light container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="static/logo.png" width="50">
+                <img src="static/logo.png" width="40">
             </a>
-            <div class="h4 ml-auto ">Curso de Excel - Buscador de Trenes</div>
+            <div class="h4 ">Curso de Excel - Buscador de Trenes</div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,7 +67,7 @@
 
                 <ul type="square">
                     <li>
-                        <p><b>SI:</b> funcion condicional de 3 argumentos. El primero es la prueba lógica, esto quiere decir que se evalua si la condición de este parametro es verdadera o falsa. En los ejemplos de abajo este argumento evalua si la celda
+                        <p><b>SI:</b> función condicional de 3 argumentos. El primero es la prueba lógica, esto quiere decir que se evaluá si la condición de este parámetro es verdadera o falsa. En los ejemplos de abajo este argumento evaluá si la celda
                             'E2' es mayor a la 'F2'. El segundo argumento es valor que va a retornar si la prueba lógica da resultado verdadero. El Tercer argumento (opcional) es valor que va a retornar si la prueba lógica da resultado falso.</p>
                     </li>
                     <div class="">
@@ -75,21 +75,48 @@
                         <img src="static/si_menor.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
                     </div>
                     <li>
-                        <p><b>SI.ERROR:</b> Función condicional de 2 argumento, como la función anterior el primer parametro es la prueba lógica, pero en este caso se evalua otra función que ponemos dentro, que no de error (#N/D). En dicho caso devolverá
-                            lo que haya dentro del segundo argumento. En el ejemplo de abajo se puede obsevar que la primera formula no tiene esta función y devuelven error como resultado, pero la segunda si la poseé por tal motivo al no encontar el dato
-                            buscado devuuelve como resultado lo que hay dentro del segundo argumento. Es bueno aclarar que en Excel como en muchos lenguajes de programación, los textos o los String (del ingles: cadena de caracteres) van siempre entre
-                            comillas. Por tal motivo si queremos que,esta función, nos devuelva una celda en blanco debemos pasar como parametro un string vacio de la siguiente forma ("") </p>
+                        <hr>
+                        <p><b>SI.ERROR:</b> Función condicional de 2 argumento, como la función anterior el primer parámetro es la prueba lógica, pero en este caso se evaluá otra función que ponemos dentro, que no de error (#N/D). En dicho caso devolverá
+                            lo que haya dentro del segundo argumento. En el ejemplo de abajo se puede observar que la primera formula no tiene esta función y devuelven error como resultado, pero la segunda si la poseé por tal motivo al no encontrar el
+                            dato buscado devuelve como resultado lo que hay dentro del segundo argumento. Es bueno aclarar que en Excel como en muchos lenguajes de programación, los textos o los String (del ingles: cadena de caracteres) van siempre entre
+                            comillas. Por tal motivo si queremos que,esta función, nos devuelva una celda en blanco debemos pasar como parámetro un string vació de la siguiente forma ("") </p>
                     </li>
                     <div class="">
                         <img src="static/si_error.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
                     </div>
                     <li>
-                        <p><b>BUSCARV:</b> La función que más usaremos. Contiene 4 argumento obligatorios. </p>
+                        <hr>
+                        <p><b>BUSCARV:</b> La función que más usaremos, su nombre viene de búsqueda vertical. Contiene 4 argumento obligatorios, el primero es la celda que donde tenemos el dato que vamos a buscar, el segundo es la base de datos o tabla donde
+                            se va a buscar el dato del primer argumento, cabe aclarar que al momento de seleccionar las celdas a buscar, Excel va a buscar solo en la primer columna de la selección. el tercer dato será la cantidad de celdas que se va a
+                            desplazar hacia la derecha cuando encuentre el dato en la primera columna. Y el cuarto dato siempre va el valor cero ( 0 ). si la función no encuentra el dato devuelve #N/D. </p>
+                        <p>En el siguiente ejemplo se puede observa que en la primer imagen se busca el dato de la celda 'C2' que contiene el valor '2' la matriz de búsqueda es la selección 'F2:H5' (Note que en la imagen se aprecia el signo pesos '$' esto
+                            es para fija la selección y al copiar la formula no se desplace) y el indicador de columnas a desplazar contiene un dos. Nos devuelve como resultado el valor 'b' dato de la celda 'G3'.</p>
+                        <p>En la segunda imagen tanto el dato a buscar y la matriz de búsqueda son iguales lo que cambia es el indicador de columnas que en este caso en un '3' y obtenemos como resultado 'w' dato de la celda 'H3'.</p>
+                        <p>¿Que pasaría si en la celda que tenemos el dato a buscar (2 o 4 en las imágenes) introducimos un valor que no esta dentro de la columna F2:F5? Pues como vimos en la función anterior (SI.ERROR) nos devolverá #N/D, para evitarlo
+                            debemos envolver a la función BUSCARV con la función SI.ERROR de la siguiente forma: <b>=SI.ERROR(BUSCARV(C2;F2:H5;2;0);"")</b> esto se conoce con el nombre de funciones anidadas. </p>
+                        <p>¿Pero que pasa si yo no se que numero debo poner en el indicador de columnas, porque no sé cuantas filas debo desplazarme o resulta muy laborioso contarlas? Bueno aquí podemos anidar la siguiente función que vamos a ver, que se
+                            llama COINCIDIR.</p>
+                        <p>Otras funciones parecidas son: BUSCARH que funciona exactamente igual pero busca de forma horizontal. y INDICE su funcionamiento es parecido pero tienes que indicarle en que columna querés buscar, obviamente se puede anidar COINCIDIR
+                            para hacerlo. </p>
                     </li>
-                    <li>Argumentos: pueden ser una constante (palabra, número, fecha), una referencia (celda o rango) o una función (que serían funciones anidadas). </li>
-                    <li>Los Argumentos deben ir separados por comas (,) o puntos y comas (;), dependiendo de la configuración.</li>
+                    <div class="">
+                        <img src="static/buscarv.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                        <img src="static/buscarv2.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                    </div>
+                    <hr>
+                    <li>
+                        <p><b>COINCIDIR:</b> Función de 3 parámetros muy parecida a BUSCARV. El primer argumento va el valor a buscar como en la función anteriormente vista. El segundo también va ser la matriz de búsqueda pero acá ya no admite una tabla
+                            sino que en este parámetro debemos pasar una fila o columna de donde esta el dato que queremos buscar, y el tercer dato siempre va el valor cero ( 0 ).</p>
+                    </li>
+                    <div class="">
+                        <img src="static/coincidir.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                        <img src="static/coincidir2.jpg" class="d-block w-30 m-4 border border-secondary rounded-3">
+                    </div>
+
 
                 </ul>
+                <hr>
+                <h5>Hasta acá por ahora, espero que les haya gustado el contenido y ante cualquier duda no duden en consultarme! Hasta pronto...</h5>
 
         </div>
 
@@ -103,6 +130,7 @@
         </div>
         <div class="d-flex justify-content-center w-100 mt-2 flex-row">
             <div class="d-flex flex-row p-4">
+                <a target='_black' href="https://luciano-vidal.herokuapp.com/"><img class="bg-white p-1 rounded-3 mb-2 me-3" width="35" src="static/logo.png" /> </a>
                 <a target='_black' href="https://twitter.com/Vidal277"><img class="bg-white p-1 rounded-3 mb-2 me-3" width="35" src="static/twitter.png" /> </a>
                 <a target='_black' href="https://github.com/Lucho-Vidal"><img class="bg-white p-1 rounded-3 mb-1 me-3" width="35" src="static/github.png" /> </a>
                 <a target='_black' href="https://www.linkedin.com/in/luciano-vidal-6b50b295/"><img class="bg-white p-1 rounded-3 mb-1 me-3" width="35" src="static/linkedin.png" /> </a>
